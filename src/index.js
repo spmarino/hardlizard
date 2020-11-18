@@ -3,6 +3,7 @@ let enCartelera = require('./enCartelera')
 
 let movies = homePage.leerJSON()
 let cartelera = enCartelera.leerJSON()
+let masVotadas = masVotadas.leerJSON()
 
 module.exports = {
     homePage : function(req,res){
