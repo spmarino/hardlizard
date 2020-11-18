@@ -1,6 +1,7 @@
-# Grupo nro...
+# Grupo nro 1
 ## Trabajo: Hard Lizard
 ## Integrantes:
-- Fulano
-- Zutano
-- Mengano
+- Sergio Mariño
+- Matias Cáceres
+- Cristian Manelli
+- Cristian Elias
