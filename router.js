@@ -18,7 +18,11 @@ module.exports = function(req, res) {
         case '/mas-votadas':
             index.masVotadas(req, res)
             break;
+        case '/preguntas-frecuentes':
+            index.preguntasFrecuentes(req, res)
+            break;
         default:
+            res.write('No se encuentra esta pagina')
             break;
     }
 }

@@ -3,12 +3,14 @@ let enCartelera = require('./enCartelera')
 const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
 const sucursalesRequeridas = require('./sucursales')
+const preguntasFrecuentes = require('./preguntasFrecuentes')
 
 
 let movies = homePage.leerJSON()
 let cartelera = enCartelera.leerJSON()
 let votos = masVotadas.leerJSON()
 let sucursales = sucursalesRequeridas.leerJSON()
+let preguntas = preguntasFrecuentes.leerJSON()
 
 module.exports = {
     homePage: function(req, res) {
@@ -69,6 +71,19 @@ module.exports = {
             res.write("Sucursal: " + theaters.name);
             res.write('\n\n')
             res.write("Direccion: " + theaters.address);
+            res.write('\n\n')
+        });
+        res.end()
+    },
+    preguntasFrecuentes: function(req, res) {
+        res.write('Preguntas Frecuentes');
+        res.write('\n\n')
+        res.write('Preguntas respondidas ' + preguntas.faqs.length)
+        preguntas.faqs.forEach(preguntas => {
+            res.write('\n\n')
+            res.write("Título: " + preguntas.faq_title);
+            res.write('\n\n')
+            res.write("Rating: " + preguntas.faq_answer);
             res.write('\n\n')
         });
         res.end()
