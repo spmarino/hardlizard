@@ -4,7 +4,6 @@ const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
 
 
-let megaVotadas = superVotadas.leerJSON()
 let movies = homePage.leerJSON()
 let cartelera = enCartelera.leerJSON()
 let votos = masVotadas.leerJSON()
@@ -14,6 +13,7 @@ module.exports = {
         movies.movies.forEach(movie => {
             res.write(movie.title + '\n')
         });
+
         res.end()
     },
     enCartelera: function (req, res) {
@@ -49,7 +49,7 @@ module.exports = {
         let rankingDosDecimales =
             promedioRanking.toFixed(2);
 
-        
+        res.write(`Total Promedio ${rankingDosDecimales}`);
         res.write(`/*/*Mas Votadas/*/* \n\n Promedio : ${rankingDosDecimales} \n\n Total de peliculas ${movieSevenForUp.length} \n\n `)
 			movieSevenForUp.sort((a, b) => (a.vote_average < b.vote_average) ? 1 : (a.vote_average > b.vote_average) ? -1 : 0);
 			movieSevenForUp.forEach(movie => {
