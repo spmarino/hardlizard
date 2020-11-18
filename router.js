@@ -1,7 +1,7 @@
 const index = require('./src/index')
 
 
-module.exports = function(req, res) {
+module.exports = function (req, res) {
     switch (req.url) {
         case '/':
             index.homePage(req, res)
@@ -11,13 +11,12 @@ module.exports = function(req, res) {
             break;
         case '/sucursales':
             index.sucursales(req, res)
-            index.enCartelera(req,res)
             break;
         case '/contacto':
-            index.contacto(req,res)
+            index.contacto(req, res)
             break;
         case '/mas-votadas':
-            index.masVotadas(req,res)
+            index.masVotadas(req, res)
             break;
         default:
             break;
