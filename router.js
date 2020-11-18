@@ -9,14 +9,14 @@ module.exports = function(req, res) {
         case '/en-cartelera':
             index.enCartelera(req, res)
             break;
+        case '/sucursales':
+            index.sucursales(req, res)
+            break;
         case '/contacto':
             index.contacto(req, res)
             break;
-        case '/masVotadas':
+        case '/mas-votadas':
             index.masVotadas(req, res)
-            break;
-        case '/sucursales':
-            index.sucursales(req, res)
             break;
         default:
             break;
