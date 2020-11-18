@@ -13,6 +13,8 @@ module.exports = {
         res.end()
     },
     enCartelera : function(req,res){
+        res.write(`/*/*En Cartelera/*/* \n\n Total de Peliculas : ${movies.length}\n\n`)
+			movies.sort((a, b) => (a.title > b.title) ? 1 : (a.title < b.title) ? -1 : 0);
         cartelera.movies.forEach(movie => {
             res.write(` **${movie.title}** \n\n /${movie.overview}/\n\n`);
         });
