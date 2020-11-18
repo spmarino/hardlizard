@@ -9,6 +9,9 @@ module.exports = function(req,res){
         case '/en-cartelera':
             index.enCartelera(req,res)
             break
+        case '/masVotadas.js':
+            index.masVotadas(req,res)
+            break
         default:
             break;
     }
