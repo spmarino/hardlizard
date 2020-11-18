@@ -4,6 +4,7 @@ const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
 
 
+let megaVotadas = superVotadas.leerJSON()
 let movies = homePage.leerJSON()
 let cartelera = enCartelera.leerJSON()
 let votos = masVotadas.leerJSON()
@@ -13,7 +14,6 @@ module.exports = {
         movies.movies.forEach(movie => {
             res.write(movie.title + '\n')
         });
-
         res.end()
     },
     enCartelera: function (req, res) {
