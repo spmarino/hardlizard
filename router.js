@@ -8,7 +8,9 @@ module.exports = function(req,res){
             break;
         case '/en-cartelera':
             index.enCartelera(req,res)
-            break
+            break;
+        case '/contacto':
+            index.contacto(req,res)
         default:
             break;
     }
