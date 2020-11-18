@@ -13,7 +13,7 @@ module.exports = {
         res.end()
     },
     enCartelera: function (req, res) {
-        res.write(`/*/*En Cartelera/*/* \n\n Total de Peliculas : ${movies.length}\n\n`)
+        res.write(`/*/*En Cartelera/*/* \n\n Total de Peliculas : ${movies.movies.length}\n\n`)
         cartelera.movies.forEach(movie => {
             res.write(` **${movie.title}** \n\n /${movie.overview}/\n\n`);
         });
