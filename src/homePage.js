@@ -1,6 +1,4 @@
 const fs = require('fs');
-const { runInThisContext } = require('vm');
-const { leerJSON } = require('./enCartelera');
 
 module.exports = {
     bd : './data/movies.json',

@@ -15,9 +15,26 @@ let preguntas = preguntasFrecuentes.leerJSON()
 
 module.exports = {
     homePage: function (req, res) {
+        res.write("Bienvenidos a DH Movies el mejor sitio para encontrar las mejores peliculas, incluso mucho mejor que Netflix, Cuevana y PopCorn")
+        res.write(`\n\n\n\n`)
+        res.write("Con un total de " + movies.length + ' peliculas')
+        res.write('\n\n')
         movies.forEach(movie => {
-            res.write(movie + '\n')
+            res.write('    - ' + movie + '\n\n')
         });
+        res.write(`\n\n\n\n`)
+        res.write(`   Recorda que podes visitar las secciones :
+        \n
+        - En Cartelera'
+        \n
+        - Mas Votadas
+        \n
+        - Sucursales
+        \n
+        - Contacto
+        \n
+        - Preguntas Frecuentes
+        \n\n`)
         res.end()
     },
     enCartelera: function (req, res) {
