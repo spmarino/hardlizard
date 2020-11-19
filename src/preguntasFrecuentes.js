@@ -1,5 +1,8 @@
+const fs = require('fs')
+
 module.exports = {
-    leerJSON:function (){
-        
+    preguntas: './data/faqs.json',
+    leerJSON: function() {
+        return JSON.parse(fs.readFileSync(this.preguntas, 'utf-8'));
     }
 }
