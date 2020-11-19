@@ -69,7 +69,7 @@ module.exports = {
         res.end()
     },
     sucursales: function(req, res) {
-        res.write('---------------  Nuestras Salas  -------------');
+        res.write('Nuestras Salas');
         res.write('\n\n')
         res.write('Total de salas = 16 ')
         res.write('\n\n')
