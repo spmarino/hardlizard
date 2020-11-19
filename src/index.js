@@ -4,9 +4,10 @@ const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
 const sucursalesRequeridas = require('./sucursales')
 const preguntasFrecuentes = require('./preguntasFrecuentes')
+const { peliculas } = require('./homePage')
 
 
-let movies = homePage.leerJSON()
+let movies = homePage.peliculas()
 let cartelera = enCartelera.leerJSON()
 let votos = masVotadas.leerJSON()
 let sucursales = sucursalesRequeridas.leerJSON()
@@ -14,10 +15,9 @@ let preguntas = preguntasFrecuentes.leerJSON()
 
 module.exports = {
     homePage: function (req, res) {
-        movies.movies.forEach(movie => {
-            res.write(movie.title + '\n')
+        movies.forEach(movie => {
+            res.write(movie + '\n')
         });
-
         res.end()
     },
     enCartelera: function (req, res) {
@@ -25,30 +25,22 @@ module.exports = {
         cartelera.movies.forEach(movie => {
             res.write(` **${movie.title}** \n\n /${movie.overview}/\n\n`);
         });
-
         res.end()
     },
     contacto: function (req, res) {
         res.end(`Contacto ${contacto}`);
-
     },
-
     masVotadas: function (req, res) {
-
         let movieSevenForUp = votos.movies.filter(function (movie) {
             return movie.vote_average >= 7;
         });
-
         let rankingPromedio = movieSevenForUp.map(function (ranking) {
             return ranking.vote_average;
         });
-
         let sumaRanking = rankingPromedio.reduce(function (acum, num) {
             return (acum + num);
         });
-
         let promedioRanking = sumaRanking / movieSevenForUp.length;
-
         let rankingDosDecimales =
             promedioRanking.toFixed(2);
 
@@ -58,9 +50,7 @@ module.exports = {
         movieSevenForUp.forEach(movie => {
             res.write(` **${movie.title}** Valoración /${movie.vote_average}/\n ${movie.overview}\n\n`)
         });
-
         res.end()
-
     },
     sucursales: function (req, res) {
         res.write('Nuestras Salas');
@@ -88,6 +78,4 @@ module.exports = {
         });
         res.end()
     }
-
-
 }
