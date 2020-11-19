@@ -5,3 +5,5 @@
 - Matias Cáceres
 - Cristian Manelli
 - Cristian Elias
+- Juan Lamb
+
