@@ -1,6 +1,5 @@
 const index = require('./src/index')
 
-
 module.exports = function(req, res) {
     switch (req.url) {
         case '/':
