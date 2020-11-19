@@ -2,13 +2,9 @@ const homePage = require('./homePage')
 const enCartelera = require('./enCartelera')
 const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
-const sucursalesRequeridas = require('./sucursales')
 const preguntasFrecuentes = require('./preguntasFrecuentes')
-<<<<<<< HEAD
 const sucursales = require('./sucursales')
-=======
-const { peliculas } = require('./homePage')
->>>>>>> 41a9beaec9eca630c94b318abab9e50f28b7d897
+
 
 
 let movies = homePage.peliculas()
@@ -73,13 +69,8 @@ module.exports = {
         });
         res.end()
     },
-<<<<<<< HEAD
-    sucursales: function(req, res) {
-        res.write('------------------  Nuestras Salas  -----------------');
-=======
     sucursales: function (req, res) {
         res.write('Nuestras Salas');
->>>>>>> 41a9beaec9eca630c94b318abab9e50f28b7d897
         res.write('\n\n')
         res.write('Total de salas = 16 ')
         res.write('\n\n')
