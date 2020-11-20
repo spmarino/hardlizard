@@ -16,13 +16,13 @@ module.exports = {
     listaPreguntas : function(){
         let preguntas = this.leerJSON()
 
-        let pregunton = preguntas.faqs.map(function(pepito){
+        let pregResp = preguntas.faqs.map(function(faq){
 
-            return `\n\n ${pepito.faq_title}\n\n\n\n ${pepito.faq_answer}`
+            return `\n\n ${faq.faq_title}\n\n\n\n ${faq.faq_answer}`
 
         })
 
-        return pregunton
+        return pregResp
 
 
 

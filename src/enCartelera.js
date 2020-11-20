@@ -14,12 +14,15 @@ module.exports = {
 
     cartelera : function (){
         let cartelera = this.leerJSON()
-        let pelis = cartelera.movies.sort((a, b) => (a.title > b.title) ? 1 : (a.title < b.title) ? -1 : 0);
         
-       let cartelerafinal = cartelera.movies.forEach(movie => {
-            return ` ${movie.title} \n\n ${movie.overview}`
-        });
-        return cartelerafinal
+
+        let peliculas = cartelera.movies.map(function(movie){
+
+            return `  \n\n\n ${movie.title}\n\n ${movie.overview}   `
+
+        })
+    
+        return peliculas.sort()
 
 
     }

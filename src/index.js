@@ -1,8 +1,8 @@
+//Requeridos
 const homePage = require('./homePage')
 const enCartelera = require('./enCartelera')
 const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
-/* const preguntasFrecuentes = require('./preguntasFrecuentes') */
 const sucursales = require('./sucursales')
 const preguntasFrecuentes = require('./preguntasFrecuentes')
 
@@ -10,20 +10,18 @@ const preguntasFrecuentes = require('./preguntasFrecuentes')
 let formula = masVotadas.promedio()
 let pelis = masVotadas.totalPeliculas()
 let pelisFiltradas = masVotadas.peliculasFiltradas()
+
 // Home Page
 let movies = homePage.peliculas()
+
 // En Cartelera
 let totalPelis = enCartelera.totalPelis()
 let pelistotal = enCartelera.cartelera()
 
-
-
-
 //Preguntas Frecuentes
-
 let totalPreguntas = preguntasFrecuentes.totalPreguntas()
 
-let listaP = preguntasFrecuentes.listaPreguntas() 
+let listaP = preguntasFrecuentes.listaPreguntas()
 
 //Sucursales
 let sucursal = sucursales.funcionArray()
@@ -52,17 +50,21 @@ module.exports = {
         \n\n`)
         res.end()
     },
+
     enCartelera: function (req, res) {
-        res.write("Total de Pelis" + " " + totalPelis)
-        res.end(" " + pelistotal)
+        res.write(`/*/*En Cartelera/*/* \n\n\n Total de peliculas ${totalPelis} \n\n ${pelistotal}`)
+     
     },
+
     contacto: function (req, res) {
         res.end(`Contacto ${contacto}`);
     },
+
     masVotadas: function (req, res) {
         res.end(`/*/* Mas Votadas /*/* \n\n **Total peliculas** ${pelis}  -Promedio- ${formula} \n\n ${pelisFiltradas}`);
-      
+    
     },
+    
     sucursales: function (req, res) {
         res.write('Nuestras Salas');
         res.write('\n\n')
@@ -75,5 +77,6 @@ module.exports = {
         res.write(" TOTAL DE PREGUNTAS : " + totalPreguntas )
         res.write ("-" + listaP )
         res.end()
+
     }
 }

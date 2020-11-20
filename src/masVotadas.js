@@ -49,6 +49,6 @@ module.exports = {
             return ` \n\ ${movie.title} ${movie.vote_average} \n\ ${movie.overview} \n\ `
         })
 
-        return peliculas.join(" ")
+        return peliculas.sort().join(" ")
    
     }}
