@@ -14,7 +14,10 @@ let movies = homePage.peliculas()
 // En Cartelera
 let cartelera = enCartelera.leerJSON()
 //Preguntas Frecuentes
-let preguntas = preguntasFrecuentes.leerJSON()
+let totalPreguntas = preguntasFrecuentes.totalPreguntas()
+
+let listaP = preguntasFrecuentes.listaPreguntas()
+
 //Sucursales
 let sucursal = sucursales.funcionArray()
 
@@ -65,16 +68,9 @@ module.exports = {
         res.end()
     },
     preguntasFrecuentes: function (req, res) {
-        res.write('Preguntas Frecuentes');
-        res.write('\n\n')
-        res.write('Preguntas respondidas ' + preguntas.faqs.length)
-        preguntas.faqs.forEach(preguntas => {
-            res.write('\n\n')
-            res.write("Título: " + preguntas.faq_title);
-            res.write('\n\n')
-            res.write("Rating: " + preguntas.faq_answer);
-            res.write('\n\n')
-        });
+        res.write(" TOTAL DE PREGUNTAS : " + totalPreguntas )
+        res.write ("-" + listaP )
         res.end()
+
     }
 }
