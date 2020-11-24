@@ -6,7 +6,7 @@ module.exports = {
         return JSON.parse(fs.readFileSync(this.bd,'utf-8'));
     },
 
-    promedio : function(){
+    promedio : function(){ //Función Promedio de Ranting Total de Peliculas
         let movies = this.leerJSON()
 
         let movieSevenForUp = movies.movies.filter(function (movie) {
@@ -29,8 +29,8 @@ module.exports = {
 
     },
 
-    totalPeliculas : function(){
-
+    totalPeliculas : function(){ // Función Cantidad de Peliculas con Rating Mayor o Igual a 7
+ 
         let movies = this.leerJSON()
 
         let movieSevenForUp = movies.movies.filter(function (movie) {
@@ -40,7 +40,7 @@ module.exports = {
         return movieSevenForUp.length
 
     },
-    peliculasFiltradas : function(){
+    peliculasFiltradas : function(){ // Función Lista de Películas de Filtradas y Ordenadas por Rating
         let movies = this.leerJSON()
         let movieSevenForUp = movies.movies.filter(function (movie) {
             return movie.vote_average >= 7;
@@ -49,6 +49,6 @@ module.exports = {
             return ` \n\ ${movie.title} ${movie.vote_average} \n\ ${movie.overview} \n\ `
         })
 
-        return peliculas.join(" ")
+        return peliculas.sort().join(" ")
    
     }}
