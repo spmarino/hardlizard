@@ -3,13 +3,18 @@ const enCartelera = require('./enCartelera')
 const contacto = require('./contacto')
 const masVotadas = require('./masVotadas')
 const sucursales = require('./sucursales')
-const preguntasFrecuentes = require('./preguntasFrecuentes')
 
-
+//Mas Votadas
+let formula = masVotadas.promedio()
+let pelis = masVotadas.totalPeliculas()
+let pelisFiltradas = masVotadas.peliculasFiltradas()
+    // Home Page
 let movies = homePage.peliculas()
+    // En Cartelera
 let cartelera = enCartelera.leerJSON()
-let votos = masVotadas.leerJSON()
+    //Preguntas Frecuentes
 let preguntas = preguntasFrecuentes.leerJSON()
+    //Sucursales
 let sucursal = sucursales.funcionArray()
 
 module.exports = {
