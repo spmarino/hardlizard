@@ -56,7 +56,7 @@ module.exports = {
 
     enCartelera: function (req, res) {
         res.write(`/*/*En Cartelera/*/* \n\n\n Total de peliculas ${totalPelis} \n\n ${pelistotal}`)
-     
+
     },
 
     contacto: function (req, res) {
@@ -65,9 +65,9 @@ module.exports = {
 
     masVotadas: function (req, res) {
         res.end(`/*/* Mas Votadas /*/* \n\n **Total peliculas** ${pelis}  -Promedio- ${formula} \n\n ${pelisFiltradas}`);
-    
+
     },
-    
+
     sucursales: function (req, res) {
         res.write('Nuestras Salas');
         res.write('\n\n')
@@ -77,8 +77,8 @@ module.exports = {
         res.end()
     },
     preguntasFrecuentes: function (req, res) {
-        res.write(" TOTAL DE PREGUNTAS : " + totalPreguntas )
-        res.write ("-" + listaP )
+        res.write(" TOTAL DE PREGUNTAS : " + totalPreguntas)
+        res.write("-" + listaP)
         res.end()
 
     }
