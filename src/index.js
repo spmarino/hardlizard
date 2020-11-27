@@ -6,6 +6,7 @@ const masVotadas = require('./masVotadas')
 const sucursales = require('./sucursales')
 const preguntasFrecuentes = require('./preguntasFrecuentes')
 
+
 //Mas Votadas
 let formula = masVotadas.promedio()
 let pelis = masVotadas.totalPeliculas()
@@ -25,6 +26,8 @@ let listaP = preguntasFrecuentes.listaPreguntas()
 
 //Sucursales
 let sucursal = sucursales.funcionArray()
+let totalDeSalas = sucursales.totalDeSalas()
+
 
 module.exports = {
     homePage: function (req, res) {
@@ -57,7 +60,7 @@ module.exports = {
     },
 
     contacto: function (req, res) {
-        res.end(`Contacto ${contacto}`);
+        res.end(`Contacto\n\n ${contacto}`);
     },
 
     masVotadas: function (req, res) {
@@ -68,7 +71,7 @@ module.exports = {
     sucursales: function (req, res) {
         res.write('Nuestras Salas');
         res.write('\n\n')
-        res.write('Total de salas = 16 ')
+        res.write('Total de salas = ' + totalDeSalas)
         res.write('\n\n')
         res.write(" " + sucursal)
         res.end()

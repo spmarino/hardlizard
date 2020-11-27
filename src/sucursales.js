@@ -14,5 +14,12 @@ module.exports = {
 
         });
         return arraySucursales.join(" ")
+    },
+    totalDeSalas: function(){
+        let sucursales = this.leerJSON()
+        let totalSalas = sucursales.theaters.length
+        return totalSalas
     }
+
+
 }
